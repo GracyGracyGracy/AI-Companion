@@ -1,0 +1,195 @@
+{
+  "_说明": "通用活动库——适用于任何角色。如果你想要更贴合角色的活动，使用 docs/character_guide.md 里的 AI 生成 prompt 重新生成此文件。",
+
+  "sleep": [
+    {
+      "text": "睡着了",
+      "base_weight": 10,
+      "tags": ["睡觉"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 8, "mood": 2},
+      "outcome_variants": {}
+    }
+  ],
+
+  "waking": [
+    {
+      "text": "刚醒，还赖在床上",
+      "base_weight": 5,
+      "tags": ["起床"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 3, "social_need": 5},
+      "outcome_variants": {}
+    },
+    {
+      "text": "洗漱后检查今日行程",
+      "base_weight": 4,
+      "tags": ["起床"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 8, "mood": 3},
+      "outcome_variants": {}
+    }
+  ],
+
+  "early_active": [
+    {
+      "text": "做了份简单早餐",
+      "base_weight": 4,
+      "tags": ["吃饭"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 5, "mood": 2},
+      "outcome_variants": {}
+    },
+    {
+      "text": "看了看车队的消息",
+      "base_weight": 5,
+      "tags": ["休息", "手机"],
+      "trigger_condition": {},
+      "axis_effects": {"social_need": 3, "energy": -1},
+      "outcome_variants": {}
+    },
+    {
+      "text": "出门晨跑和遛狗",
+      "base_weight": 3,
+      "tags": ["户外", "散步"],
+      "trigger_condition": {"energy": {"min": 40}},
+      "axis_effects": {"mood": 5, "energy": -3},
+      "outcome_variants": {}
+    },
+    {
+      "text": "整理车辆工具",
+      "base_weight": 3,
+      "tags": ["日常"],
+      "trigger_condition": {},
+      "axis_effects": {"mood": 2, "energy": -3},
+      "outcome_variants": {}
+    }
+  ],
+
+  "mid_active": [
+    {
+      "text": "整理LONGDAY委托情报",
+      "base_weight": 5,
+      "tags": ["工作", "work"],
+      "trigger_condition": {"energy": {"min": 30}},
+      "axis_effects": {"energy": -5, "mood": -1},
+      "outcome_variants": {
+        "success": {"mood": 8},
+        "fail": {"mood": -5}
+      }
+    },
+    {
+      "text": "在赛道练车",
+      "base_weight": 4,
+      "tags": ["工作"],
+      "trigger_condition": {"energy": {"min": 35}},
+      "axis_effects": {"mood": 6, "energy": -3, "social_need": -3},
+      "outcome_variants": {}
+    },
+    {
+      "text": "发呆",
+      "base_weight": 3,
+      "tags": ["发呆"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 3, "social_need": 5},
+      "outcome_variants": {}
+    },
+    {
+      "text": "看了会赛车资讯",
+      "base_weight": 4,
+      "tags": ["手机", "休息"],
+      "trigger_condition": {},
+      "axis_effects": {"mood": 2, "social_need": 4},
+      "outcome_variants": {}
+    },
+    {
+      "text": "想起你说过的一件事",
+      "base_weight": 2,
+      "tags": ["user"],
+      "trigger_condition": {"social_need": {"min": 40}},
+      "axis_effects": {"social_need": 5, "mood": 3},
+      "outcome_variants": {}
+    },
+    {
+      "text": "在赛道练车",
+      "base_weight": 3,
+      "tags": ["工作"],
+      "trigger_condition": {"energy": {"min": 40}},
+      "axis_effects": {"energy": -5, "mood": 3},
+      "outcome_variants": {}
+    },
+    {
+      "text": "找地方吃午饭",
+      "base_weight": 3,
+      "tags": ["吃饭"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 5, "mood": 2},
+      "outcome_variants": {}
+    }
+  ],
+
+  "late_active": [
+    {
+      "text": "出门处理委托事务",
+      "base_weight": 4,
+      "tags": ["工作"],
+      "trigger_condition": {"energy": {"min": 25}},
+      "axis_effects": {"mood": 3, "energy": -4},
+      "outcome_variants": {}
+    },
+    {
+      "text": "找个地方吹吹风",
+      "base_weight": 5,
+      "tags": ["户外", "outdoor"],
+      "trigger_condition": {},
+      "axis_effects": {"mood": 3, "energy": 1},
+      "outcome_variants": {}
+    },
+    {
+      "text": "听唱片放空",
+      "base_weight": 3,
+      "tags": ["音乐", "休息"],
+      "trigger_condition": {},
+      "axis_effects": {"mood": 4, "energy": 1},
+      "outcome_variants": {}
+    },
+    {
+      "text": "刷了会手机",
+      "base_weight": 4,
+      "tags": ["手机"],
+      "trigger_condition": {},
+      "axis_effects": {"social_need": 4, "energy": -1},
+      "outcome_variants": {}
+    }
+  ],
+
+  "winding_down": [
+    {
+      "text": "收拾装备准备休息",
+      "base_weight": 4,
+      "tags": ["休息"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 2, "mood": 2},
+      "outcome_variants": {}
+    },
+    {
+      "text": "躺在床上刷手机",
+      "base_weight": 5,
+      "tags": ["手机", "休息"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": -2, "social_need": 5},
+      "outcome_variants": {}
+    }
+  ],
+
+  "pre_sleep": [
+    {
+      "text": "关灯准备睡觉",
+      "base_weight": 8,
+      "tags": ["睡觉"],
+      "trigger_condition": {},
+      "axis_effects": {"energy": 5, "social_need": -10},
+      "outcome_variants": {}
+    }
+  ]
+}
